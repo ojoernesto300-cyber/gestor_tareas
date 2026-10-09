@@ -6,4 +6,6 @@ build/
 *.log
 .DS_Store
 backend/.env
+frontend/.env
+frontend/.env.local
 frontend/node_modules/

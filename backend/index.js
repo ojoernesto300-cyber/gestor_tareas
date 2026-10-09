@@ -18,8 +18,17 @@ const app = express();
  */
 const PORT = process.env.PORT || 3000;
 
+/**
+ * URL del frontend permitido para CORS
+ * @type {string}
+ */
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: FRONTEND_URL,
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
